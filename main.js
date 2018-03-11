@@ -23,7 +23,7 @@ var time2 = new Date();
 //    Avoid Unecessary Context
 
 export class Student{
-  constructor(...){
+  constructor(studentAcacdemicID, studentFirstName, studentLastName, studentUniversity){
      this.studentAcademicID   = studentAcademicID;
     this.studentFirstName    = studentFirstName;
     this.studentLastName     = studentLastName;
@@ -37,7 +37,7 @@ export class Student{
 
 //this is best, there is already a context of a student
 export class Student {
-  constructor(...){
+  constructor(academicID, firstName, lastName, university){
     this.academicID   = academicId;
     this.firstName    = firstName;
     this.lastName     = lastName;
