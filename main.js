@@ -73,9 +73,39 @@ prepareData(products);
 //////////////////////////////////////
 /*Tip#9: 
     Reduce Number of Arguments
+      -is the function accomplishing a specific task?
 */
 
+function draw(element, width, height, backgroundColor, color, margin, padding){
+  //this is inefficient & asks for errors when calling this function
+  element.style.width           = width;
+  element.style.height          = height;
+  element.style.backgroundColor = backgroundColor;
+  element.style.color           = color;
+}//end function draw
 
+let config = {
+  width = 10,
+  height = 10,
+  backgroundColor = 'white',
+  color = 'black',
+};//end config
+
+function draws(element, config){
+  element.style.width           = config.width;
+  element.style.height          = config.height;
+  element.style.backgroundColor = config.backgroundColor;
+  element.style.color           = config.color;
+}
+
+let element = window.document.getElementById('elem');
+draws(element, config);
+
+////////////////////////////
+/*
+  Tip#10
+    avoid Flags
+*/
 
 
 
