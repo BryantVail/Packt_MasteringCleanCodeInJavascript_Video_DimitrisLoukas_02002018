@@ -32,31 +32,48 @@ var products = [
 //Functions
 
 function prepareData(items){
-  for(let i=0;i<items.length; i++){
-    items[i].id = i+1;
-  }//end for
+  addIds(items);//changing the local variable passed in
+  let boughtItems = getBoughtItems(items);
+  let totalCost = calculatePriceTotal(boughtItems);
+  console.log("prepareData complete");
+}//end function prepareData
 
+
+function addIds(items){//adds ID to any product in 'items' that does not have an ID.
+  
+  for(let i=0;i<items.length; i++){
+    if(items[i].id !== true){
+      items[i].id = i+1;
+    }//end if    
+  }//end for
+}//end function addIds(items){
+
+function getBoughtItems(items){
   let boughtItems = [];
 
-  for(let i=0;i<items.length;i++){
+  for(let i =0; i<items.length; i++){ 
     if(items[i].bought){
       boughtItems.push(items[i]);
     }//end if
   }//end for
+  return boughtItems;
+}//end getBoughtItems
 
-
-  let totalCost = 0;
-
-  for(let i=0;i<boughtItems.length;i++){
-    totalCost += boughtItems[i].price;
-  }//end for
-
-  console.log(`totalCost: ${totalCost}`);
-}//end function prepareData
+function calculatePriceTotal(items){
+  let total = 0;
+  for(let i =0;i<items.length;i++){
+    total += items[i].price
+  }
+  console.log(`totalCost: ${total}`);
+}//end function calculateMoneyAlreadySpent(items){
 
 prepareData(products);
 
 
+//////////////////////////////////////
+/*Tip#9: 
+    Reduce Number of Arguments
+*/
 
 
 
