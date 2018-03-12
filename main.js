@@ -11,36 +11,44 @@
 
 ///////////////////////////////////
 /////// Objects & Classes /////////
-/////// ES6vsPrototypal   /////////
+///////       ES6         /////////
 ///////////////////////////////////
 
-function Pet(name){
-  this.name = name;
-}
-Pet.prototype.eat = function(){
-  console.log(`${this.name} is eating...`);
-}
+class Pet{
+  constructor(name){
+    this.name = name;
+  }
 
-function Dog(name, breed){
-  Pet.call(this, name);//call 'Pet' constructor with the 'this'|| 'Dog' function context, passing in 'name'
-  this.breed = breed;
-}
+  eat(){
+    console.log(`${this.name} is eating...`);
+  }
 
-Dog.prototype = Object.create(Pet.prototype);
+  speak(){
+    console.log(`${this.name} is speaking...`);
+  }
 
-Dog.prototype.play = function(){
-  console.log(`${this.name} is playing...`);
-}
+}//end Pet
 
-var max = new Dog("Max", "Beagle");
+class Dog extends Pet{
+  constructor(name, breed){
+    super(name);
+    this.breed = breed;
+  }
+
+  play(){
+    console.log(`${this.name} is playing...`);
+  }
+  speak(){
+    console.log(`${this.name} is barking...`);
+  }
+
+}//end Dog
+
+let max = new Dog('max', 'beagle');
+max.speak();
 max.eat();
 max.play();
 console.log(max);
-
-
-
-
-
 
 
 
