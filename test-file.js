@@ -1,24 +1,25 @@
 var todos = [
     {
         id:1,
-        task:'commit',
+        task:"commit",
         completed:true
     },
     {
         id:2,
-        task:'push',
+        task:"push",
         completed:false
     },
     {
         id:3,
-        task:'leave building',
+        task:"leave building",
         completed:false
 
     }
 ];
 
-console.log('all todos: ');
-console.log(todos);
+
+window.console.log("Print All Todos: ");
+window.console.log(todos);
 
 var completed = [];
 for(let todo of todos){
