@@ -2,7 +2,18 @@
 
 //FunctionalProgramming_Intro_ini
 /*
-
+      In this Section:
+         Intro, 
+         "Pure" function,
+         Object.assign,
+         Map & forEach,
+         Reducing an array
+         Filtering Arrays
+      Terms:
+        functional Programming:
+        Pure Function:
+        Immutability
+        side effects
 */
 //
 //   FunctionalProgramming_Intro_ini
@@ -13,20 +24,6 @@
 ///////  intro            /////////
 ///////////////////////////////////
 
-/*
-  -what is a linter
-    static code analysis, 
-    avoid bugs & problems
-    saves debugging time
-    forces better written code
-  -Pros & Cons
-  -Most Famous JavaScript linters
-    JSLint
-    JSCS
-    JSHint
-    JSLint
-  -adding 'ESLint' to your project
-*/
 
 
 
