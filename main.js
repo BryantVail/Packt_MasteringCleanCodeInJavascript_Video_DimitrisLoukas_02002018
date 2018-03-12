@@ -1,4 +1,4 @@
-//CleanCodeWJavaScript_CleanFunctions_AllAboutThis_HardBinding
+//CleanCodeWJavaScript_CleanFunctions_AllAboutThis_new keyword
 /*
     The content of 'this'
     avoid 'buggy' code regarding 'this'
@@ -8,33 +8,18 @@
 //    -its the call site
 
 ///////////////////////////////////
-////////Hard Binding //////////////
+////////'new' keyword //////////////
 ///////////////////////////////////
 
-var obj = {
-  a:1,
-  b:2,
-  c:3
+function Person(firstName, lastName, age){
+  this.firstName  = firstName;
+  this.lastName   = lastName;
+  this.age        = age;
+  console.log(this);
 }
 
-function test(){
-  console.log(this.a);
-  console.log(this.b);
-  console.log(this.c);
-}
-
-function callMeLater(cb){
-  setTimeout(()=> {
-    cb();
-  }, 3000);
-}//end function callMeLater(cb){
-
-callMeLater(test.bind(obj));//no matter the context of the calling function, test is 'bound' to the obj 'this' context
-// .bind() DOES NOT call the function
-// returns a ref to the function w/the 'this' keyword set to the function specified
-
-
-
+let p = new Person('Bry', 'Vail', 28);
+console.log(p);
 
 
 
