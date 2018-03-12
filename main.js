@@ -28,6 +28,11 @@
   //  92
   //  1
 
+  test.call(obj); //additional parameters are sent in as an array[]
+  // obj.test = test; &&  obj.test(); at once
+  //function test, call with the 'this' context of 'obj'
+
+  test.apply(obj, );//additional parameters ar passed in as a set of arguments
 
 
 
