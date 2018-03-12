@@ -40,9 +40,12 @@ class ProfileManager {
           //this.domain       ="";//removed
       }//end constructor
       
-      createUserName(){
-            let random = Math.floor(Math.random()*100000);//not pure: with the same input, the result could be different
-            this.username = `${this.user.fistName}.${this.user.lastName}.${random}`;
+      //should be able to take a parameter instead of side effects
+      createUserName(user){
+            //random removed, must find a better way
+            //let random = Math.floor(Math.random()*100000);//not pure: with the same input, the result could be different
+            
+            return `${this.user.fistName}.${this.user.lastName}.${user.id}`;
       }//end createUserName
       
       createProfileUrl(){
