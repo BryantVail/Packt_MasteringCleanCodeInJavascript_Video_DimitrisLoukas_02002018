@@ -30,13 +30,14 @@
 /*
 Pure functions
 Combine Pure functions to avoid side effects
+Accepting Arguments & Returning Values
 */
 class ProfileManager {
       constructor(user){
             this.user         =user;
             this.profileUrl   ="";
-            this.username     ="";
-            this.domain       ="";
+          //this.username     ="";//removed
+          //this.domain       ="";//removed
       }//end constructor
       
       createUserName(){
@@ -45,7 +46,7 @@ class ProfileManager {
       }//end createUserName
       
       createProfileUrl(){
-            this.profileUrl = `${this.domain}${this.username}`;
+            this.profileUrl = `${this.domain}${this.username}`;//assumes that 'this.username'
       }//end createProfile
 }//end ProfileManager
 
