@@ -1,10 +1,10 @@
 "use strict";//always use strict
 
-//FunctionalProgramming_Intro_ini
+//FunctionalProgramming_PureFunction_ini
 /*
       In this Section:
          Intro, 
-         "Pure" function,
+         "Pure" function,     x
          Object.assign,
          Map & forEach,
          Reducing an array
@@ -25,7 +25,7 @@
 
 ///////////////////////////////////
 /////// Functional Programming/////
-///////  intro            /////////
+///////  PureFunctions    /////////
 ///////////////////////////////////
 
 function sum(a,b){
