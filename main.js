@@ -2,104 +2,8 @@
 /*
     Write Cleaner Functions
     work w/arguments & return values in an optimal way.
+    CleanCodeWJavaScript_CleanFunctions_
 */
-
-//tip#8, Single Responsibility 
-
-var products = [
-  {
-    name:'CPU',
-    price:228.99,
-    bought:true,
-  },
-  {
-    name:'RAM',
-    price:7.99,
-    bought:false,
-  },
-  {
-    name:'Hard Drive',
-    price:70,
-    bought:true,
-  },
-  {
-    name:'keyboard',
-    price:15.99,
-    bought:false,
-  }
-];//end products array
-
-//Functions
-
-function prepareData(items){
-  addIds(items);//changing the local variable passed in
-  let boughtItems = getBoughtItems(items);
-  let totalCost = calculatePriceTotal(boughtItems);
-  console.log("prepareData complete");
-}//end function prepareData
-
-
-function addIds(items){//adds ID to any product in 'items' that does not have an ID.
-  
-  for(let i=0;i<items.length; i++){
-    if(items[i].id !== true){
-      items[i].id = i+1;
-    }//end if    
-  }//end for
-}//end function addIds(items){
-
-function getBoughtItems(items){
-  let boughtItems = [];
-
-  for(let i =0; i<items.length; i++){ 
-    if(items[i].bought){
-      boughtItems.push(items[i]);
-    }//end if
-  }//end for
-  return boughtItems;
-}//end getBoughtItems
-
-function calculatePriceTotal(items){
-  let total = 0;
-  for(let i =0;i<items.length;i++){
-    total += items[i].price
-  }
-  console.log(`totalCost: ${total}`);
-}//end function calculateMoneyAlreadySpent(items){
-
-prepareData(products);
-
-
-//////////////////////////////////////
-/*Tip#9: 
-    Reduce Number of Arguments
-      -is the function accomplishing a specific task?
-*/
-
-function draw(element, width, height, backgroundColor, color, margin, padding){
-  //this is inefficient & asks for errors when calling this function
-  element.style.width           = width;
-  element.style.height          = height;
-  element.style.backgroundColor = backgroundColor;
-  element.style.color           = color;
-}//end function draw
-
-let config = {
-  width = 10,
-  height = 10,
-  backgroundColor = 'white',
-  color = 'black',
-};//end config
-
-function draws(element, config){
-  element.style.width           = config.width;
-  element.style.height          = config.height;
-  element.style.backgroundColor = config.backgroundColor;
-  element.style.color           = config.color;
-}
-
-let element = window.document.getElementById('elem');
-draws(element, config);
 
 ////////////////////////////
 /*
@@ -107,6 +11,69 @@ draws(element, config);
     avoid Flags
 */
 
+let toDos= [
+  {
+    task:'get some eggs',
+    done:false,
+  },
+  {
+    task:'send pull req',
+    done:true,
+  },
+  {
+    task:'Watch "Mastering Clean Code in JavaScript"',
+    done:false
+  }
+];
+
+//filter = 0 prints all todos
+//filter = 1 prints all completed todos
+//filter = 2 prints pending todos
+
+function printToDos(toDos, filter){
+  if(filter ==0){
+    for(let todo of toDos){
+      console.log(todo.task);
+    }//end for
+  }//end if (filter ==0){
+  else if(filter ==1){
+    for(let todo of toDos){
+      if(todo.done){
+        console.log(todo.task);
+      }//end if
+    }//end for
+  }//end else if(filter ==1){
+  else if(filter == 2){
+    for(let todo of toDos){
+      if(!todo.done){
+        console.log(todo.task);
+      }
+    }
+  }  
+}//end function printToDos(toDos, filter){
+
+//////////////Solution to 'tags'
+function printAllToDos(toDos){
+  for(let todo of toDos){
+    console.log(todo.task);
+  }//end for
+}//end function printAllToDos(toDos){
+
+function printDoneTodos(toDos){
+  for(let todo of toDos){
+    if(todo.done){
+      console.log(todo.task);
+    }//end if
+  }//end for
+}//end function printDoneTodos(toDos){
+
+function printPendingToDos(toDos){
+  for(let todo of toDos){
+    if(!todo.done){
+      console.log(todo.task);
+    }//end if
+  }//end for
+}//end function printPendingToDos(toDos){
 
 
 
