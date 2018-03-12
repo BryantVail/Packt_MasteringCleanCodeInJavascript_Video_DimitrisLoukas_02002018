@@ -1,26 +1,35 @@
-//CleanCodeWJavaScript_CleanFunctions_AllAboutThis_new keyword
+"use strict";
+//CleanCodeWJavaScript_CleanFunctions_AllAboutThis_ObjectsAndClasses_init
 /*
     The content of 'this'
     avoid 'buggy' code regarding 'this'
 
 */
-// 1.Function definition location DOES NOT matter
-//    -its the call site
+// tip#13:
+//    Use Property Descriptors to Create 'Read only' fields
+//
 
 ///////////////////////////////////
-////////'new' keyword //////////////
+////////Objects & Classes /////////
 ///////////////////////////////////
 
-function Person(firstName, lastName, age){
-  this.firstName  = firstName;
-  this.lastName   = lastName;
-  this.age        = age;
-  console.log(this);
-}
+var person = {
+  firstName : 'John',
+  lastName  : 'Smith',
 
-let p = new Person('Bry', 'Vail', 28);
-console.log(p);
+};
 
+Object.defineProperty(person, 'age',{
+  value:28,
+  writeable:false,
+  enumerable:true,
+  configurable:false
+});
+
+console.log(person);
+
+//person.age = 44; //will be an error in "strict mode";
+console.log(person);
 
 
 
