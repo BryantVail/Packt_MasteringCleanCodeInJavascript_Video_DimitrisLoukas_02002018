@@ -7,74 +7,60 @@
 
 ////////////////////////////
 /*
-  Tip#10
-    avoid Flags
+  Tip#11
+    avoid callbacks
 */
 
-let toDos= [
-  {
-    task:'get some eggs',
-    done:false,
-  },
-  {
-    task:'send pull req',
-    done:true,
-  },
-  {
-    task:'Watch "Mastering Clean Code in JavaScript"',
-    done:false
-  }
-];
+function getSensorAData(cb){
+  setTimeout(()=>{
+    cb({
+      min:8,
+      max:118
+    });
+  },2000);
+}//end function getSensorAData(cb){
 
-//filter = 0 prints all todos
-//filter = 1 prints all completed todos
-//filter = 2 prints pending todos
+function getSensorBData(cb){
+  setTimeout(()=>{
+    cb({
+      temp:78,
+      value:26,
+    });
+  },500);
+}//end function getSensorBData(cb){
 
-function printToDos(toDos, filter){
-  if(filter ==0){
-    for(let todo of toDos){
-      console.log(todo.task);
-    }//end for
-  }//end if (filter ==0){
-  else if(filter ==1){
-    for(let todo of toDos){
-      if(todo.done){
-        console.log(todo.task);
-      }//end if
-    }//end for
-  }//end else if(filter ==1){
-  else if(filter == 2){
-    for(let todo of toDos){
-      if(!todo.done){
-        console.log(todo.task);
-      }
-    }
-  }  
-}//end function printToDos(toDos, filter){
+function getSensorCData(cb){
+  setTimeout(()=>{
+    cb({
+      min:14,
+      max:92,
+      temp:64,
+      value:12,
+    });
+  },2000);
+}//end function getSensorCData(cb){
 
-//////////////Solution to 'tags'
-function printAllToDos(toDos){
-  for(let todo of toDos){
-    console.log(todo.task);
-  }//end for
-}//end function printAllToDos(toDos){
 
-function printDoneTodos(toDos){
-  for(let todo of toDos){
-    if(todo.done){
-      console.log(todo.task);
-    }//end if
-  }//end for
-}//end function printDoneTodos(toDos){
 
-function printPendingToDos(toDos){
-  for(let todo of toDos){
-    if(!todo.done){
-      console.log(todo.task);
-    }//end if
-  }//end for
-}//end function printPendingToDos(toDos){
+function combineSensorData(){
+  let sensorAData = 1;
+  let sensorBData = 2;
+  let sensorCData = 3;
+  
+  getSensorAData((sensorAData) => {
+    console.log(`sensor a data: ${sensorAData}`);
 
+    getSensorBData(sensorBData =>{
+      console.log(`sensor B Data: ${sensorBData}`);
+
+      getSensorCData(sensorCData => {
+        console.log(`Sensor C Data: ${sensorCData}`);
+      });
+    });
+  });
+}//end function combineSensorData(){
+
+combineSensorData();
 
 
 
