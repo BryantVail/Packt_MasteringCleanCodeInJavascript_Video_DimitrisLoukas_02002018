@@ -27,6 +27,34 @@
 /////// Functional Programming/////
 ///////  PureFunctions    /////////
 ///////////////////////////////////
+/*
+Pure functions
+Combine Pure functions to avoid side effects
+*/
+class ProfileManager {
+      constructor(user){
+            this.user         =user;
+            this.profileUrl   ="";
+            this.username     ="";
+            this.domain       ="";
+      }//end constructor
+      
+      createUserName(){
+      
+      }//end createUserName
+      
+      createProfileUrl(){
+            
+      }//end createProfile
+
+
+
+
+
+
+
+
+/////////////Video 1 intro below ////////////////////
 
 function sum(a,b){
       return a+b;
@@ -51,7 +79,7 @@ class Calculator {
       //variables passed by reference
             //both variables are able to edit.
 
-
+ 
 
 
 
