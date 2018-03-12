@@ -1,17 +1,16 @@
-"use strict";
-//CleanCodeWJavaScript_CleanFunctions_AllAboutThis_ObjectsAndClasses_linter-init
+"use strict";//always use strict
+
+//FunctionalProgramming_Intro_ini
 /*
-    The content of 'this'
-    avoid 'buggy' code regarding 'this'
 
 */
 //
-//    Using a linter
+//   FunctionalProgramming_Intro_ini
 //
 
 ///////////////////////////////////
-/////// Objects & Classes /////////
-///////  linter           /////////
+/////// Functional Programming/////
+///////  intro            /////////
 ///////////////////////////////////
 
 /*
