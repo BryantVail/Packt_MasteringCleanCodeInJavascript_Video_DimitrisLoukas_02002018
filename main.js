@@ -40,14 +40,23 @@ class ProfileManager {
       }//end constructor
       
       createUserName(){
-      
+            let random = Math.floor(Math.random()*100000);//not pure: with the same input, the result could be different
+            this.username = `${this.user.fistName}.${this.user.lastName}.${random}`;
       }//end createUserName
       
       createProfileUrl(){
-            
+            this.profileUrl = `${this.domain}${this.username}`;
       }//end createProfile
+}//end ProfileManager
 
+let user = {
+      id:1491141, firstName:"Bryant", lastName:"Vail"
+}//end user
 
+let manager = new ProfileManager(user);
+manager.createUsername();
+manager.createProfileUrl;
+console.log(manager);
 
 
 
