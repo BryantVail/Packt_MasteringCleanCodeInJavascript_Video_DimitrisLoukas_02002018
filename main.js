@@ -1,35 +1,43 @@
 "use strict";
-//CleanCodeWJavaScript_CleanFunctions_AllAboutThis_ObjectsAndClasses_init
+//CleanCodeWJavaScript_CleanFunctions_AllAboutThis_ObjectsAndClasses_ES6vsPrototypal
 /*
     The content of 'this'
     avoid 'buggy' code regarding 'this'
 
 */
-// tip#13:
+// tip#14:
 //    Use Property Descriptors to Create 'Read only' fields
 //
 
 ///////////////////////////////////
-////////Objects & Classes /////////
+/////// Objects & Classes /////////
+/////// ES6vsPrototypal   /////////
 ///////////////////////////////////
 
-var person = {
-  firstName : 'John',
-  lastName  : 'Smith',
+function Pet(name){
+  this.name = name;
+}
+Pet.prototype.eat = function(){
+  console.log(`${this.name} is eating...`);
+}
 
-};
+function Dog(name, breed){
+  Pet.call(this, name);//call 'Pet' constructor with the 'this'|| 'Dog' function context, passing in 'name'
+  this.breed = breed;
+}
 
-Object.defineProperty(person, 'age',{
-  value:28,
-  writeable:false,
-  enumerable:true,
-  configurable:false
-});
+Dog.prototype = Object.create(Pet.prototype);
 
-console.log(person);
+Dog.prototype.play = function(){
+  console.log(`${this.name} is playing...`);
+}
 
-//person.age = 44; //will be an error in "strict mode";
-console.log(person);
+var max = new Dog("Max", "Beagle");
+max.eat();
+max.play();
+console.log(max);
+
+
 
 
 
