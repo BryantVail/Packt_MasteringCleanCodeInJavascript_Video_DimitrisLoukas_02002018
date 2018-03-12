@@ -5,8 +5,8 @@
     avoid 'buggy' code regarding 'this'
 
 */
-// tip#14:
-//    Use Property Descriptors to Create 'Read only' fields
+// tip#15:
+//    Use Object.freeze instead of 'const'
 //
 
 ///////////////////////////////////
