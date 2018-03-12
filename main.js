@@ -44,7 +44,12 @@ class Calculator {
       }//end add
 }//end calculator
 
-
+////Shared State
+      //classes
+      //global variables
+      //closures
+      //variables passed by reference
+            //both variables are able to edit.
 
 
 
