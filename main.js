@@ -8,14 +8,8 @@
             **!! references to other objects or variables are also cloned.
             
       The 'spread' operator(...)
-            copies all 'enumerable properties'
-            
-            
+            copies all 'enumerable properties'      
 */
-//
-//   FunctionalProgramming_Intro_ini
-//
-
 ///////////////////////////////////
 /////// Functional Programming/////
 ///////  Object.assign(target, ...sources)    /////////
