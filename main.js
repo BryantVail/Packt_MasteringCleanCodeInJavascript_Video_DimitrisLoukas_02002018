@@ -27,6 +27,9 @@
 /////// Functional Programming/////
 ///////  PureFunctions    /////////
 ///////////////////////////////////
+
+
+////////////////Video 2 Pure Functions (below) //////////////////////////////////////////////////
 /*
 Pure functions
 Combine Pure functions to avoid side effects
@@ -45,7 +48,7 @@ class ProfileManager {
             //random removed, must find a better way  (below)
             //let random = Math.floor(Math.random()*100000);//not pure: with the same input, the result could be different
             
-            return `${this.user.fistName}.${this.user.lastName}.${user.id}`;
+            return `${user.fistName}.${user.lastName}.${user.id}`;
       }//end createUserName
       
       createProfileUrl(domain, username){
@@ -57,6 +60,8 @@ let user = {
       id:1491141, firstName:"Bryant", lastName:"Vail"
 }//end user
 
+let profileUrl = manager.createProfileUrl("https://mySocialMedia.com", createUsername(user));
+
 let manager = new ProfileManager(user);
 manager.createUsername();
 manager.createProfileUrl;
@@ -67,7 +72,9 @@ console.log(manager);
 
 
 
-/////////////Video 1 intro below ////////////////////
+
+
+/////////////Video 1 intro below ////////////////////////////////////////////////////////////////////////////////
 
 function sum(a,b){
       return a+b;
