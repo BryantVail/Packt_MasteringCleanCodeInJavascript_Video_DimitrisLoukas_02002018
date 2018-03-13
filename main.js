@@ -2,22 +2,15 @@
 
 //FunctionalProgramming_PureFunction_ini
 /*
-      In this Section:
-         Intro, 
-         "Pure" function,     x
-         Object.assign,
-         Map & forEach,
-         Reducing an array
-         Filtering Arrays
-      Terms:
-        functional Programming:
-            3 principals
-                  Pure Functions
-                        same input/same output
-        Pure Function:
-        Immutability
-        side effects
-            function modifies the program outside the function
+      Object.assign(target, ...sources);
+            copies all numerable 'own' properties of the sources, to the object.
+            returns the target object, a shallow clone.
+            **!! references to other objects or variables are also cloned.
+            
+      The 'spread' operator(...)
+            copies all 'enumerable properties'
+            
+            
 */
 //
 //   FunctionalProgramming_Intro_ini
@@ -25,8 +18,54 @@
 
 ///////////////////////////////////
 /////// Functional Programming/////
-///////  PureFunctions    /////////
+///////  Object.assign(target, ...sources)    /////////
 ///////////////////////////////////
+
+let readings = {
+      coreTemp:         74,
+      additionalTemp:   80,
+      readingA:         178,
+      readingB:         120,
+      readingC:         -190
+}//end let readings
+
+function adjustReadings(readings){
+      readings.readingA-=20;//not totally pure just the good parts
+      readings.readingB += readings.coreTemp/2; 
+      return readings;
+}//adjustReadings
+
+function testReadingA(readingA){
+      return readingA >=170;
+}//end testReadingA
+
+console.log("readings before: ", readings);
+let newReadings = adjustReadings({...readings});
+console.log(testReadingA(readings.readingA));
+console.log("Readings after:\t", readings);
+console.log("New Readings:\t",newReadings);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ////////////////Video 2 Pure Functions (below) //////////////////////////////////////////////////
