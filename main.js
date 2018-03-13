@@ -41,6 +41,7 @@ function testReadingA(readingA){
 
 console.log("readings before: ", readings);
 let newReadings = adjustReadings({...readings});
+
 console.log(testReadingA(readings.readingA));
 console.log("Readings after:\t", readings);
 console.log("New Readings:\t",newReadings);
