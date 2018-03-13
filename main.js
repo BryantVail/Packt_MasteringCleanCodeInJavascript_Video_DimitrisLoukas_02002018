@@ -35,21 +35,21 @@ Accepting Arguments & Returning Values
 class ProfileManager {
       constructor(user){
             this.user         =user;
-            this.profileUrl   ="";
+          //this.profileUrl   ="";//removed
           //this.username     ="";//removed
           //this.domain       ="";//removed
       }//end constructor
       
-      //should be able to take a parameter instead of side effects
+            //should be able to take a parameter instead of side effects
       createUserName(user){
-            //random removed, must find a better way
+            //random removed, must find a better way  (below)
             //let random = Math.floor(Math.random()*100000);//not pure: with the same input, the result could be different
             
             return `${this.user.fistName}.${this.user.lastName}.${user.id}`;
       }//end createUserName
       
-      createProfileUrl(){
-            this.profileUrl = `${this.domain}${this.username}`;//assumes that 'this.username'
+      createProfileUrl(domain, username){
+            return `${domain}${username}`;//assumes that 'this.username'
       }//end createProfile
 }//end ProfileManager
 
