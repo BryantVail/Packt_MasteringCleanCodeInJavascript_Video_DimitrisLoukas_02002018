@@ -34,7 +34,12 @@ function testReadingA(readingA){
 }//end testReadingA
 
 console.log("readings before: ", readings);
-let newReadings = adjustReadings({...readings});
+
+
+console.log("Readings before: ", readings);
+let newReadings = adjustReadings(Object.assign({}, readings));
+//assign target as a new object, then use 'readings' to send enumerated 
+//properties to the blank object for a 'shallow clone'
 
 console.log(testReadingA(readings.readingA));
 console.log("Readings after:\t", readings);
@@ -69,6 +74,8 @@ Pure functions
 Combine Pure functions to avoid side effects
 Accepting Arguments & Returning Values
 */
+
+/*
 class ProfileManager {
       constructor(user){
             this.user         =user;
@@ -78,11 +85,11 @@ class ProfileManager {
       }//end constructor
       
             //should be able to take a parameter instead of side effects
-      createUserName(user){
+      createUsername(user){
             //random removed, must find a better way  (below)
             //let random = Math.floor(Math.random()*100000);//not pure: with the same input, the result could be different
             
-            return `${user.fistName}.${user.lastName}.${user.id}`;
+            return `${user.firstName}.${user.lastName}.${user.id}`;
       }//end createUserName
       
       createProfileUrl(domain, username){
@@ -94,13 +101,13 @@ let user = {
       id:1491141, firstName:"Bryant", lastName:"Vail"
 }//end user
 
-let profileUrl = manager.createProfileUrl("https://mySocialMedia.com", createUsername(user));
-
 let manager = new ProfileManager(user);
+let profileUrl = manager.createProfileUrl("https://mySocialMedia.com", manager.createUsername(manager));
+
 manager.createUsername();
 manager.createProfileUrl;
 console.log(manager);
-
+*/
 
 
 
