@@ -1,21 +1,41 @@
-let todos = [
-  {task:  "Buy Eggs",                         completed:false},
-  {task:  "Fight for rights",                 completed:false},
-  {task:  "Stand up for what you believe in", completed:true},
-  {task:  "Make a difference",                completed:true}
-  ]//end todos[]
+//reduce, reduce will always return 1 value
 
-function makePending(todos){
-  for(let i=0;i<todos.length;i++){
-    todos.completed = false;
-}//end makePending(todos
+let numbers = [
+  2,9,8,7,6
+ ];//end numbers
+
+function numbersSum(numbers){
+  let sum = 0;
+  for(let num of numbers){
+    if(num % 2 ==0){
+      sum +=num/2;
+    }
+    else{
+      sum +=num;
+    }//end else
+  }//end for(let num of numbers){
+  return sum;//should be 24
+  
+}//end numbersSum
 
 
 
-console.log(todos);
-console.log();
-makePending(todos);
-console.log(todos);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
