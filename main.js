@@ -1,28 +1,23 @@
-//filter an array
+//Modules
+    //why modules
+        //organize
+        //namespacing
+        //dependencies
+    //why so many definitions
+        //
+class A {
+    doThing() {
+        console.log("A.doThing");
+    }//end doThing
+}//end A
 
-let numbers = [
-    6,8,3,14,1,9,10
-  ]//end numbers
+var a = new A();
+a.doThing();
 
-
-//function getEven(numbers){
-//    let evens = [];
-//    for(let num of numbers){
-//        if(num %2 ===0){
-//            evens.push(num);
-//        }
-//    }//end for
-//    return evens;
-//}//end get even
-
-function getEven(numbers){.
-    
-    return numbers.filter(num => num % 2 ===0);
-}//end getEven
-
-
-
-
+class B {
+    doThing(){
+        
+    }//end doThing
 
 
 
