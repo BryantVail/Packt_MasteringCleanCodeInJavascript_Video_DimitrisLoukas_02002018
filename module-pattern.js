@@ -21,9 +21,13 @@ function ModuleLoader(){
         var depsInstances  = dependencies.map(dep) => {
             return getInstance(dep);
         }//end anonymous function from dependencies.map(dep)
-      }//end else
+        modules[name] = instance.apply(instance/*for this binding*/,depsInstances);
+      }//end else   
   }//end define
-    
+    return {
+      getInstance: getInstance, 
+      define: define
+    };
 }//end ModuleLoader
 
 
