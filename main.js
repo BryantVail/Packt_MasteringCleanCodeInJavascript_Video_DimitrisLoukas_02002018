@@ -1,4 +1,5 @@
 "use strict";//always use strict
+/*eslint no-console: "error"*/
 
 //FunctionalProgramming_PureFunction_ini
 /*
@@ -31,25 +32,25 @@
 */
 
 let readings = {
-      coreTemp:         74,
-      additionalTemp:   80,
-      readingA:         178,
-      readingB:         120,
-      readingC:         -190
-}//end let readings
+    coreTemp:         74,
+    additionalTemp:   80,
+    readingA:         178,
+    readingC:         -190,
+    readingB:         120,
+};//end let readings
 
 function adjustReadings(readings){
-      readings.readingA-=20;//not totally pure just the good parts
-      readings.readingB += readings.coreTemp/2; 
-      return readings;
+    readings.readingA-=20;//not totally pure just the good parts
+    readings.readingB += readings.coreTemp/2; 
+    return readings;
 }//adjustReadings
 
 function testReadingA(readingA){
-      return readingA >=170;
+    return readingA >=170;
 }//end testReadingA
 
 console.log("readings before: ", readings);
-let newReadings = adjustReadings({...readings});
+let newReadings = adjustReadings(Object.assign({}, readings));
 
 console.log(testReadingA(readings.readingA));
 console.log("Readings after:\t", readings);
