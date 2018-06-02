@@ -19,8 +19,8 @@ let todos = [
 		}
 	}//end addIdentifier
 
-	console.log(`before adding identifier: \n${todos}`);
+	console.log("before adding identifier: \n", todos);
 
 	addIdentifier(todos);
-	console.log(`after adding identifier: \n${todos}`);
+	console.log("after adding identifier: \n", todos);
 
