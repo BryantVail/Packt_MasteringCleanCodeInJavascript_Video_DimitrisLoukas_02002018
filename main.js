@@ -7,7 +7,7 @@
 
 ////////////////////////////
 /*
-  Tip#11
+  Tip#11 and only 11
     avoid callbacks
 */
 
@@ -60,9 +60,8 @@ function combineSensorData(){
   });
 }//end function combineSensorData(){
 
+
 combineSensorData();
-
-
 
 
 
