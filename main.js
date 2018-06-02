@@ -10,6 +10,15 @@ let todos = [
       {task: "Cook Dinner",   completed:  false}
 ];
 
+function makePending(todos){
+
+      for(let i =0;i<todos.length; i++){
+            todos[i].completed = false;
+      }//end for
+}//end makePending(todos)
+console.log(todos);
+
+makePending(todos);
 console.log(todos);
 
 
