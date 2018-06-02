@@ -14,9 +14,16 @@ let todos = [
 	//constructs a new array from the values in the function
 
 	function addIdentifier(todos){
-		for(let i =0;i<todos.length; i++){
-			todos[i].id = i+1;
-		}
+		// for(let i =0;i<todos.length; i++){
+		// 	todos[i].id = i+1;
+		// }
+
+		return todos.map((todo, index)=> {
+			return{
+				...todo,
+				id:index+1
+			}
+		});
 	}//end addIdentifier
 
 	console.log("before adding identifier: \n", todos);
