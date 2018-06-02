@@ -84,6 +84,8 @@ Pure functions
 Combine Pure functions to avoid side effects
 Accepting Arguments & Returning Values
 */
+
+/*
 class ProfileManager {
       constructor(user){
             this.user         =user;
@@ -117,7 +119,7 @@ manager.createProfileUrl;
 console.log(manager);
 
 
-
+*/
 
 
 
@@ -125,6 +127,7 @@ console.log(manager);
 
 /////////////Video 1 intro below ////////////////////////////////////////////////////////////////////////////////
 
+/*
 function sum(a,b){
       return a+b;
 }//end sum
@@ -148,7 +151,7 @@ class Calculator {
       //variables passed by reference
             //both variables are able to edit.
 
- 
+ */
 
 
 
