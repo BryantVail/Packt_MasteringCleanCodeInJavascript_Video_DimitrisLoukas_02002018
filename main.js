@@ -24,21 +24,8 @@ function makePending(todos){
 		todo.completed = false;
 	});
 
-	//Array.prototype.map
-	//constructs a new array from the values in the function
-
-	function addIdentifier(todos){
-		for(let i =0;i<todos.length; i++){
-			todos[i].id = i+1;
-		}
-	}//end addIdentifier
-
-	console.log(`before adding identifier: \n${todos}`);
-
-	addIdentifier(todos);
-	console.log(`after adding identifier: \n${todos}`);
-
 }//end makePending(todos)
+
 console.log(todos);
 console.log();
 makePending(todos);
