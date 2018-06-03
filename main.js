@@ -19,7 +19,16 @@
 ///////////////////////////////////
 /////// Functional Programming/////
 ///////  Object.assign(target, ...sources)    /////////
-///////////////////////////////////
+/*
+      Object.assign: "Copies all enumerable 'own' properties of the sources 
+      to target object".
+
+      Shallow clone only: a reference will remain a reference
+
+      //////////
+      The Spread Operator: (...)
+            -copies enumerable properties
+*/
 
 let readings = {
       coreTemp:         74,
