@@ -1,0 +1,19 @@
+{
+  "name": "packt_masteringcleancodeinjavascript_video_dimitrisloukas_02002018",
+  "version": "1.0.0",
+  "description": "tutorial, Clean Code JavaScript",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BryantVail/Packt_MasteringCleanCodeInJavascript_Video_DimitrisLoukas_02002018.git"
+  },
+  "author": "Bryant V",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BryantVail/Packt_MasteringCleanCodeInJavascript_Video_DimitrisLoukas_02002018/issues"
+  },
+  "homepage": "https://github.com/BryantVail/Packt_MasteringCleanCodeInJavascript_Video_DimitrisLoukas_02002018#readme"
+}

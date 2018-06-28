@@ -8,23 +8,33 @@
 //    -its the call site
 
 
+    var generic = {};
 
-var a = 92;
+    function test(){
+        console.log(this.a);
+    }
 
-var obj = {
-  a:1,
-  b:2,
-  c:3
-};
+    let a = 92;
 
-function test(){
-  console.log(this.a);
-}
+    generic.test = test;
+    
+    generic.test();
+    
 
-test();
+    var obj = {
+        a:1,
+        b:2,
+        c:3
+    };
 
-obj.test = test;
-obj.test();
+
+
+    test();
+
+    obj.test = test;
+    obj.test();
+
+
 
 
 
